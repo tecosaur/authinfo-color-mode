@@ -1,0 +1,10 @@
+#+title: Authinfo color mode
+#+author: TEC
+
+Just makes =authinfo= files that little bit more colorful.
+
+#+begin_src emacs-lisp
+(use-package! authinfo-colour-mode
+  :mode ("authinfo.gpg\\'" . authinfo-colour-mode)
+  :init (advice-add 'authinfo-mode :override #'authinfo-colour-mode))
+#+end_src
