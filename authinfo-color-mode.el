@@ -28,23 +28,23 @@
 
 ;;; Code
 
-(setq authinfo-color-keywords
-      '(("^#.*" . font-lock-comment-face)
-        ("^\\(machine\\)[ \t]+\\([^ \t\n]+\\)"
-         (1 font-lock-variable-name-face)
-         (2 font-lock-builtin-face))
-        ("\\(login\\)[ \t]+\\([^ \t\n]+\\)"
-         (1 font-lock-comment-delimiter-face)
-         (2 font-lock-keyword-face))
-        ("\\(password\\)[ \t]+\\([^ \t\n]+\\)"
-         (1 font-lock-comment-delimiter-face)
-         (2 font-lock-doc-face))
-        ("\\(port\\)[ \t]+\\([^ \t\n]+\\)"
-         (1 font-lock-comment-delimiter-face)
-         (2 font-lock-type-face))
-        ("\\([^ \t\n]+\\)[, \t]+\\([^ \t\n]+\\)"
-         (1 font-lock-constant-face)
-         (2 nil))))
+(defvar authinfo-color-keywords
+  '(("^#.*" . font-lock-comment-face)
+    ("^\\(machine\\)[ \t]+\\([^ \t\n]+\\)"
+     (1 font-lock-variable-name-face)
+     (2 font-lock-builtin-face))
+    ("\\(login\\)[ \t]+\\([^ \t\n]+\\)"
+     (1 font-lock-comment-delimiter-face)
+     (2 font-lock-keyword-face))
+    ("\\(password\\)[ \t]+\\([^ \t\n]+\\)"
+     (1 font-lock-comment-delimiter-face)
+     (2 font-lock-doc-face))
+    ("\\(port\\)[ \t]+\\([^ \t\n]+\\)"
+     (1 font-lock-comment-delimiter-face)
+     (2 font-lock-type-face))
+    ("\\([^ \t\n]+\\)[, \t]+\\([^ \t\n]+\\)"
+     (1 font-lock-constant-face)
+     (2 nil))))
 
 (defun authinfo-color--hide-passwords (start end)
   "Just `authinfo--hide-passwords' with a different color face overlay."
@@ -82,3 +82,5 @@ Like `fundamental-mode', just with color and passoword hiding."
     (reveal-mode)))
 
 (provide 'authinfo-color-mode)
+
+;;; authinfo-color-mode.el ends here
